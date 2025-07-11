@@ -3,6 +3,7 @@ type Phone = {
     model: string;
     image: string;
     price: number;
+    quantity: number;
 }
 
 

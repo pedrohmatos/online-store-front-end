@@ -33,24 +33,32 @@ const Carrinho = () => {
             </h1>
             <ul className="w-fit mx-auto flex flex-col gap-y-4">
                 {
-                    cartPhones.length > 1 ?
+                    cartPhones.length >= 1 ?
 
                         cartPhones.map((phone, index) => {
                             return (
-                                <li key={index} className="relative px-4 py-2 rounded shadow-normal flex flex-row items-center gap-x-2 max-w-96">
-                                    <img
-                                        className="w-[100px]"
-                                        src={phone.image}
-                                        alt={`Imagem do celular ${phone.model}`}
-                                    />
-                                    <div>
-                                        <p className="text-xl">
-                                            {phone.model}
-                                        </p>
-                                        <p>
-                                            R$: <strong className="text-highlight">{phone.price}</strong>
-                                        </p>
+                                <li key={index} className="relative px-4 py-2 rounded shadow-normal flex flex-row items-center gap-x-2 justify-between max-w-96">
+                                    <div className="flex flex-row items-center gap-x-2">
+                                        <img
+                                            className="w-[100px]"
+                                            src={phone.image}
+                                            alt={`Imagem do celular ${phone.model}`}
+                                        />
+                                        <div>
+                                            <p className="text-xl">
+                                                {phone.model}
+                                            </p>
+                                            <p>
+                                                R$: <strong className="text-highlight">{phone.price}</strong>
+                                            </p>
+                                        </div>
                                     </div>
+                                    {
+                                        phone.quantity > 1 &&
+                                        <div className="text-gray-500 right-4">
+                                            x{phone.quantity}
+                                        </div>
+                                    }
                                     <button onClick={() => handleDelete(phone.id)} className="text-2xl text-red-600 absolute top-1 right-1 cursor-pointer hover:scale-110 ease-in-out duration-100">
                                         <IoCloseCircleSharp className="hover:border-2 border-red-600 rounded-full" />
                                     </button>
@@ -58,7 +66,7 @@ const Carrinho = () => {
                             )
                         })
                         :
-                        <h2>Vazio</h2>
+                        <h2 className="text-gray-400 text-2xl font-semibold">Vazio...</h2>
                 }
             </ul>
         </div>
