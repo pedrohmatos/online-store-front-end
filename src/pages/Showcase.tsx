@@ -51,10 +51,10 @@ const Showcase = () => {
                         alt={`Imagem do celular ${phoneRendered.model}`}
                     />
                     <ul className="my-10 justify-self-center">
-                        <li>Câmera: {phoneRendered.main_camera}</li>
-                        <li>Armazenamento: {phoneRendered.internal_storage}</li>
-                        <li>Ram: {phoneRendered.ram}</li>
-                        <li>Tela: {phoneRendered.screen}</li>
+                        <li>Câmera: {phoneRendered.main_camera} MP</li>
+                        <li>Armazenamento: {phoneRendered.internal_storage} GB</li>
+                        <li>Ram: {phoneRendered.ram} GB</li>
+                        <li>Tela: {phoneRendered.screen} polegadas</li>
                         <li>Lançamento: {phoneRendered.release_year}</li>
                     </ul>
                     <div className="border-2 rounded-md border-light p-5 sm:mt-12 lg:mt-0 sm:col-span-2 sm:px-10 lg:col-span-1">

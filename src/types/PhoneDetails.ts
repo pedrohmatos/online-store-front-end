@@ -5,10 +5,10 @@ type PhoneDetails = {
     image: string;
     price: number;
     release_year: number;
-    screen: string;
-    main_camera: string;
-    ram: string;
-    internal_storage: string;
+    screen: number;
+    main_camera: number;
+    ram: number;
+    internal_storage: number;
 };
 
 export default PhoneDetails;
